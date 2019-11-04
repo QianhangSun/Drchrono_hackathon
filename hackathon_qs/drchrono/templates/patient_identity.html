@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to drchrono</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap.min.css'>
+    <link rel="stylesheet" href='../static/css/mybutton.css'>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div style="width:100%;display: block;margin:0 auto;margin-top:100px;">
+        <div class="block" style="margin:0px auto; width:500px;">
+            <p style="text-align:center;font-size:16px; width:500px;">Please confirm your identity, once finished, click on "confirm":</p>
+        </div>
+
+    <form action="confirm_information" method="GET"> {% csrf_token %}
+    	<input type="text" name="patient_id" value={{patient.patient_id}} style="display:none;">
+    	<input type="text" name="apt_id" value={{apt.apt_id}} style="display:none;">
+        <div class="block" style="margin:0px auto; margin-top:20px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">First Name:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="firstname" disabled="true" value="{{patient.first_name}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Last Name:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="lastname" disabled="true" value="{{patient.last_name}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Date of Birth:</label>
+            <input style="margin-left:20px;width:260px;" type="date" name="date_of_birth" 
+                   disabled="true" value="{{patient.date_of_birth|date:'Y-m-d'}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Gender:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="gender" disabled="true" value="{{patient.gender}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Address:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="address" disabled="true" value="{{patient.address}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">City:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="city" disabled="true" value="{{patient.city}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">State:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="state" disabled="true" value="{{patient.state}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">SSN:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="ssn" disabled="true" value="{{patient.ssn}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Cell Phone:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="cell_phone" disabled="true" value="{{patient.cell_phone}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Email:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="email" disabled="true" value="{{patient.email}}">
+        </div>
+
+        <div class="block" style="margin:0px auto; margin-top:40px; width:400px;">
+            <input type="submit" class="btn-goback" name="goback" value="Go Back">
+            <input type="submit" class="btn-update" style="margin-left:76px;" name="update" value="Update">
+            <input type="button" class="btn-next" style="margin-left:76px;" data-toggle="modal" data-target="#update" name="confirm" value="Confirm" >
+        </div>
+
+        <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Check In</h4>
+                    </div>
+                    <div class="modal-body">
+                        You have successfully checked in! Please wait or reschedule.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" name="confirm" value="Confirm" class="btn btn-default">
+                            Done
+                        </button>
+                        <button type="submit" name="reschedule" value="Reschedule" class="btn btn-primary">
+                            Reschedule
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

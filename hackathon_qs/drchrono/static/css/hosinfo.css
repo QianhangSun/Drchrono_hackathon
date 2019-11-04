@@ -1,0 +1,62 @@
+#smallLink{
+    color:#666;
+    font-size: 12px;
+}
+#hosName{
+    font-size: 18px;
+    color: #333;
+}
+#hosInfoSim a{
+    color: #1d84f4;
+    text-decoration: none;
+}
+#hosBscInfo img, #hosBscInfo div{
+    padding-top: 5px !important;
+    padding-bottom: 20px !important;
+    border-bottom: solid #6cf 2px;
+}
+.hosInfoGrey{
+    color: #999;
+}
+.hosInfoOrng{
+    color:#ff9026;
+}
+
+.hosCntntLbl{
+    margin-top: 30px !important;
+    margin-bottom: 10px !important;
+}
+.hosClass{
+    border: solid #e1e9f0 0.3px;
+    border-radius: 0.3em;
+    padding: 0px !important;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.hosClassTitle{
+    background-color: #C9F6FF;
+    color: #97b2c8;
+    text-align: center;
+}
+.hosClassCntnt{
+    border-left: solid #e1e9f0 1px;
+}
+.hosClass:hover{
+    border:solid #2896f2;
+}
+.hosClassTitle:hover{
+    background-color: #fff;
+}
+.container-fluid{
+    width:1020px;
+    height:1000px;
+    position: relative;
+    top:120px;
+    margin:0 auto;
+}
+.footer{
+    height:100px;
+    width:100%;
+    position: absolute;
+    top:1200px;
+}

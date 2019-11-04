@@ -1,0 +1,268 @@
+body {
+
+}
+
+.footer{
+    width: 100%;
+    height:150px;
+    position: absolute;
+    top:972px;
+}
+.index-container {
+    width: 1020px;
+    height: 100%;
+    padding: 20px 0;
+    margin: 0 auto;
+    background-color: #ffffff;
+    /*position: absolute;*/
+    position: relative;
+    top: 462px;
+}
+
+.pic-box {
+    width: 100%;
+    height: 326px;
+    position: absolute;
+    top: 116px;
+    background-color:#7bd0cd;
+        /*#0f1a38;背景图片1*/
+    /*#2BA5ED原背景，纯色;*/
+    /*#7bd0cd(背景图片2)*/
+    /*#659ebc（背景图片3）*/
+
+
+    /*background: url("../img/主页背景图1.png");*/
+    margin: 0px auto;
+}
+
+/*添加了一个容器。。把快速预约框定义在了pic-box中间 by zhangrui*/
+.content-box{
+    width: 1020px;
+    /*margin: 30px auto;
+    height: 266px;*/
+    margin: 0px auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    height: 326px;
+
+    position: relative;
+    background-image: url("../img/主页背景图2修正.png");
+    /*background: url("../img/主页背景图1修正.png");*/
+}
+.ct-box-bottom{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 400px;
+    bottom: 30px;
+    /*padding-right: 30px;*/
+    margin-right: 50px;
+}
+.ct-box-bottom-blk{
+    float: right;
+    width: 60px;
+    height: 12px;
+    background-color: #555555;
+    opacity: 0.6;
+    margin-left: 10px;
+    border-radius: 3px;
+}
+.ct-box-bottom-blk :hover{
+    background-color: #dddddd;
+}
+.fastapt-box{
+    height: 100%;
+    width: 360px;
+    padding: 30px;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    position: relative;
+    /*top: 30px;*/
+    opacity: 0.85;
+}
+
+.fastapt-box .title{
+    font-size: 16px;
+    width: 100%;
+
+}
+#left-part{
+    width: 55px;
+    height: 90%;
+    margin: 10px 10px 10px 0px;
+    /*display: inline;*/
+    float: left;
+}
+.left-inner-part{
+    font-size: 8px;
+    color: #999999;
+    /*display: inline;*/
+    width: 100%;
+    /*margin-right: 5px;*/
+    height: 20%;
+}
+#right-part{
+    width: 210px;
+    margin: 10px 10px 10px 10px;
+    height: 90%;
+    /*display: inline;*/
+    float: left;
+}
+.right-inner-part{
+    width: 100%;
+    height: 25%;
+}
+.right-special{
+    display: inline;
+}
+
+
+.msg{
+    font-size: 8px;
+    color: #999999;
+    display: inline;
+    width: 60px;
+    margin-right: 5px;
+    /*float: left;*/
+}
+
+/*.contents{
+    !*width: 100%;*!
+    display: inline;
+    margin-right: 10px;
+    width: 240px;
+    !*position: absolute;*!
+    !*right: 0px;*!
+}*/
+
+/*.box{
+    width: 100%;
+    position: relative;
+    height: 40px;
+    margin:10px 0px;
+
+}*/
+
+/*.mycontainer{
+    margin-left: 55px;
+}*/
+.promoted {
+    width: 743px;
+    height: 490px;
+    position: absolute;
+    background-color: #ffffff;
+    top:0;
+    border:1px solid #f5f5f5;
+}
+#nav-mynav{
+    margin: 0px;
+    border-top: solid #2aabd2;
+}
+.nav-myaddition{
+    width: 120px;
+    text-align: center;
+}
+#nav-checkMORE{
+    position: absolute;
+    right: 0px;
+    float: left;
+}
+.promoted-box1{
+    height: 445px;
+    width: 230px;
+    margin: 0px;
+    position: absolute;
+    left: 0px;
+    padding: 20px 0px;
+}
+.promoted-box2{
+    height: 445px;
+    width: 230px;
+    margin: 0px;
+    position: absolute;
+    left: 255px;
+    padding: 20px 0px;
+}
+.promoted-box3{
+    height: 445px;
+    width: 230px;
+    margin: 0px;
+    position: absolute;
+    right: 0px;
+    padding: 20px 0px;
+}
+
+.promoted-inner-top{
+    padding-bottom: 30px;
+    border-bottom: dashed #99979c;
+    border-width: 1px;
+}
+.promoted-inner-top .r{
+    float: right;
+    display: inline;
+}
+.promoted-inner-top .l{
+    float: left;
+    display: inline;
+}
+.promoted-inner-bottom{
+    height: 234px;
+}
+.promoted-inner-bottom a{
+/*    font: "Adobe 黑体 Std R";
+    font-size: 24px;*/
+    color: black;
+}
+.promoted-inner-bottom p{
+    float: right;
+}
+.pib-inner{
+    margin-top: 20px;
+}
+.p-box-46{
+    margin-top: 20px;
+}
+.news{
+    width:260px;
+    height:490px;
+    position: absolute;
+    right:0;
+    top:0;
+    border:1px solid #f5f5f5;
+}
+#news-title{
+    margin: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+    /*padding: auto 10%;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fbfbfb;
+    height:42px;
+    font-size: 16px;
+}
+#news-title p{
+    float: right;
+}
+#news-title a{
+    color: black;
+}
+#news-title-top{
+    float: left;
+    color: #fcbc2f;
+}
+#news-detail{
+    margin: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5px;
+    height: 65%;
+    text-align: left;
+    border-right: solid;
+    border-bottom: solid;
+    border: 1px #99979c;
+}
+#news-detail p{
+    padding-top: 10px;
+    margin: 0px;
+}

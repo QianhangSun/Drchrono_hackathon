@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to drchrono</title>
+    <link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap.min.css'>
+	<link rel="stylesheet" href='../static/css/mybutton.css'>
+</head>
+<body>
+	<div style="width:100%;display: block;margin:0 auto;margin-top:200px;">
+		<h1 style="text-align:center;">Welcome to Dr.{{ doctor.last_name }}'s clinic, please select your type to check in:</h1>
+		<a href="{% url 'checkin' %}" style="display:block;text-align:center;margin-top:50px;">
+    		<button class="btn btn-chrono" style="width:220px;">With Appointment</button>
+    	</a>
+    	<a href="{% url 'newappointment' %}" style="display:block;text-align:center;margin-top:50px;">
+    		<button class="btn btn-chrono" style="width:220px;">Without Appointment</button>
+    	</a>
+	</div>
+</body>
+</html>

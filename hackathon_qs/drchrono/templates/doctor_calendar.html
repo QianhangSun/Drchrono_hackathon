@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8' />
+<link rel="stylesheet" href='../static/css/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+<link rel="stylesheet" href='../static/css/fullcalendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<link rel="stylesheet" href='../static/plugins/select2/select2.min.css'>
+<link rel="stylesheet" href='../static/plugins/layer/skin/layer.css'>
+<link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap-datetimepicker.min.css'>
+<link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap.min.css'>
+<script src='../static/js/lib/moment.min.js'></script>
+<script src='../static/js/lib/jquery.min.js'></script>
+<script src='../static/js/fullcalendar/fullcalendar.min.js'></script>
+<script src='../static/plugins/layer/layer.js'></script>
+<script>
+
+  $(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listWeek'
+      },
+      defaultDate: '2019-11-04',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+
+      eventClick: function(calEvent, jsEvent, view) {
+        layer.open({
+          type: 2,
+          title: 'detail', 
+          shadeClose: false,
+          maxmin: true,
+          area: ['800px', '460px'],
+          content: '/doctor_calendar/detail?id=' + calEvent.id,
+        });
+      },
+      
+      events: [
+        {% for apt in apt_all %}
+          {
+            id: '{{apt.apt_id}}',
+            title: '{{apt.status}}',
+            start: '{{apt.scheduled_time | date:"Y-m-d H:i"}}',
+            end: '{{apt.end_time | date:"Y-m-d H:i"}}',
+          },
+        {% endfor %}
+      ],
+
+    });
+
+  });
+
+</script>
+<style>
+
+  body {
+    margin: 40px 10px;
+    padding: 0;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-size: 14px;
+  }
+
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+</style>
+</head>
+<body>
+    <div id='calendar'></div>
+    <br>
+    <div class="form-horizontal">
+        <div class="form-group has-feedback" style="left:360px;">
+            <label class="col-sm-1 control-label">Average wait (in minutes):</label>
+            <div class="col-sm-1">
+                <textarea class="form-control" id="avg_time" rows="1" readonly>{{avg_time}} minute</textarea> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

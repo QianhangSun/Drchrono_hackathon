@@ -1,0 +1,121 @@
+.container{
+    position: relative;
+    height:1000px;
+    width:1020px;
+    margin:0 auto;
+    top:120px;
+}
+#appointTitleLbl{
+    border-bottom: solid 2px #60bff2;
+}
+#appointTitleLbl div{
+    background-color: #60bff2;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+#appointTitleLbl a{
+    color: #60bff2;
+    text-decoration: none;
+}
+#appointTitleLbl a:hover{
+    color: #1fa4f0;
+    text-decoration: none;
+}
+#hosInfo{
+    background-color: #f7f7f7;
+}
+.hosInfoBlack{
+    color: #000;
+    font-size: 12px;
+}
+.hosInfoGrey{
+    color: #9c9c9c;
+    font-size: 12px;
+}
+#hosInfoTitle{
+    padding: 0.5em 0px;
+    border-bottom: solid 1px #ddd;
+}
+#appointCntntLbl *{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+#appointCntntLbl a{
+    color: #60bff2;
+    text-decoration: none;
+}
+#appointCntntLbl a:hover{
+    color: #1fa4f0;
+    text-decoration: none;
+}
+#appointCntnt{
+    /*margin-top: 10px !important;
+    margin-bottom: 10px !important;*/
+    padding: 10px 0;
+    border-bottom:1px solid #f5f5f5;
+}
+#tableRoot{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+#specialTH{
+    padding-top: 0.25em;
+    padding-bottom: 1.75em;
+}
+.appntBlue{
+    background-color: #e0eefd;
+}
+.appntBlue a{
+    color: #fff;
+}
+.appntBlue:hover{
+    background-color: #4ab4ed;
+}
+#appointRuleDiv{
+    background-color: #eeeeee;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+#appointRuleLbl{
+    color: #606060;
+}
+th{
+    background-color: #f8fafc;
+}
+.InfoBlack{
+    color: #000;
+}
+.InfoGrey{
+    color: #b5b5b5;
+}
+#appointDocList{
+    /*border-bottom: 1px solid #9c9c9c;*/
+    border-bottom:1px solid #f5f5f5;
+    padding: 22px 0;
+}
+.docNameBlack{
+    font-size: 14px;
+}
+.docIntro{
+    font-size: 12px;
+    color: #9c9c9c;
+}
+.feeGrey{
+    color: #b5b5b5;
+}
+.feeRed{
+    color: #e4736a;
+}
+.feeOrange{
+    color: #fec109;
+}
+.footer{
+    width:100%;
+    height:100px;
+    position: absolute;
+    top:1200px;
+}
+

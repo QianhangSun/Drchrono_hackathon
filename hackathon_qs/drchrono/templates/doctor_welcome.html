@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to drchrono</title>
+    <link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap.min.css'>
+	<link rel="stylesheet" href='../static/css/mybutton.css'>
+</head>
+<body>
+	<div style="width:100%;display: block;margin:0 auto;margin-top:200px;">
+		<h1 style="text-align:center;">Welcome Dr.{{ doctor.last_name }}</h1>
+		<a href="{% url 'kiosk' %}" style="display:block;text-align:center;margin-top:50px;">
+    		<button class="btn btn-chrono" style="width:160px;">Kiosk Mode</button>
+    	</a>
+    	<a href="{% url 'doctorcalendar' %}" style="display:block;text-align:center;margin-top:50px;">
+    		<button class="btn btn-chrono" style="width:160px;">Doctor Mode</button>
+    	</a>
+	</div>
+</body>
+</html>

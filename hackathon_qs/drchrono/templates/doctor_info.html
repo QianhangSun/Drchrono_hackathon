@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to drchrono</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/doctorinfo.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="header"></div>
+	<div class="content-fluid" >
+		<div class="row" id="docBscInfo">
+        	<div class="col-lg-6 col-md-6" id="docInfoCntnt">
+            	<span id="docName">{{doctor.first_name}} {{doctor.last_name}}</span><small id="docJob">Dotor</small><br>
+            	<span class="infogrey">Email: </span><span id="docAddr">{{doctor.email}}</span><br>
+            	<span class="infogrey">Specialty: </span><span id="docIntro">{{doctor.specialty}}</span>
+        	</div>
+    	</div>
+
+	<div class="row" id="docAppnt">
+        <div class="col-lg-5 col-md-5 col-lg-offset-3 col-md-offset-3">
+            <table class="" cellspacing="10px">
+                <thead>
+                <tr>
+                    <th rowspan="2" id="specialTH"></th>
+                    {% for department in date %}
+                        <th>{{department}}</th>
+                    {% endfor %}
+                </tr>
+                <tr class="appntTimeGrey">
+                    {% for w in week %}
+                        <th>{{w}}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>morning</td>
+                    {% for morn in morning %}
+                        {% if morn %}
+                           {% url 'orderinfo' morn.0 as ourl %}
+                           <td class="appntBlue"><a href="{{ourl}}">choose</a></td>
+                        {% else %}
+                           <td></td>
+                        {% endif %}
+
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>afternoon</td>
+                    {% for after in afternoon %}
+                        {% if after %}
+                           {% url 'orderinfo' after.0 as ourl %}
+                           <td class="appntBlue"><a href="{{ourl}}">choose</a></td>
+                        {% else %}
+                           <td></td>
+                        {% endif %}
+
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td>evening</td>
+                    {% for even in evening %}
+                        {% if even %}
+                           {% url 'orderinfo' even.0 as ourl %}
+                           <td class="appntBlue"><a href="{{ourl}}">choose</a></td>
+                        {% else %}
+                           <td></td>
+                        {% endif %}
+
+                    {% endfor %}
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+</div>
+</body>
+<script type="text/javascript" src="/static/js/jquery-3.0.0.js"></script>
+<script src="/static/js/bootstrap.js"></script>
+<script src="/static/js/addheader.js"></script>
+</html>

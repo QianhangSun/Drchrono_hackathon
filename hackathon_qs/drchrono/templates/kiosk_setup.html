@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap.min.css'>
+	<link rel="stylesheet" href='../static/css/mybutton.css'>
+</head>
+
+<body>
+  	<div style="width:100%;display: block;margin:0 auto;margin-top:200px;">
+  		<h1 style="text-align:center;">Hello doctor, for patients' checkin, please login through</h1>
+    	<a href="{% url 'social:begin' 'drchrono' %}" style="display:block;text-align:center;margin-top:50px;">
+    		<button class="btn btn-chrono">Drchrono</button>
+    	</a>
+  	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome doctor</title>
+</head>
+<body>
+    Hello doctor, if you want to see your appointments, please log in
+    <br>
+    time:{{ now }}
+    <br>
+    date:{{ now.date }}
+    <br>
+    time:{{ now.time }}
+    <form action="check_in" method="GET"> {% csrf_token %}
+    {% for appointment in appointments %}
+    <br>Patient_id: {{ appointment.patient_id }}
+        Appointment_id: {{ appointment.apt_id }}
+        Scheduled time: {{appointment.scheduled_time}}
+        <input type="submit" name="" value="Arrive">
+
+    {% endfor %}
+    </form>
+</body>
+</html>

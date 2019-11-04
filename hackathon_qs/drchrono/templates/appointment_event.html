@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8' />
+<link rel="stylesheet" href='../static/css/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+<link rel="stylesheet" href='../static/css/fullcalendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<link rel="stylesheet" href='../static/plugins/select2/select2.min.css'>
+<link rel="stylesheet" href='../static/plugins/layer/skin/layer.css'>
+<link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap-datetimepicker.min.css'>
+<link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap.min.css'>
+
+<script src='../static/plugins/select2/select2.full.min.js'></script>
+<script src='../static/plugins/layer/layer.js'></script>
+<script src='../static/plugins/bootstrap/js/bootstrap-datetimepicker.js'></script>
+<script src='../static/plugins/jQuery/jquery-2.2.3.min.js'></script>
+<script src='../static/js/lib/moment.min.js'></script>
+<script type="text/javascript" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#btnSave').click(function(){
+            var data = $("#addForm").serialize();
+            $.ajax({
+                type: $("#addForm").attr('method'),
+                url: "{% url 'doctorcalendar' %}",
+                data: data,
+                cache: false,
+                success: function (msg) {
+                    parent.$('#avg_time').text(msg.result + ' minute');
+                    var index=parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index);
+                    return;
+                }
+            });
+        });
+    });
+</script>
+
+
+<body>
+    <div class="box box-danger">
+        <!-- /.box-header -->
+        <form class="form-horizontal" id="addForm" method="post">
+            {% csrf_token %}
+            <p class="box-body">
+            <fieldset>
+                <input name="apt_id" value="{{apt.apt_id}}" type="hidden">
+                <div class="form-group has-feedback">
+                    <label class="col-sm-2 control-label">Patient:</label>
+                    <div class="col-sm-3">
+                        <textarea class="form-control" name="patient_name" rows="1" readonly>{{patient.first_name}} {{patient.last_name}}</textarea> 
+                    </div>
+                    <label class="col-sm-2 control-label">Status:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" style="width:100%;" name="status">
+                            <option value="{{apt.status}}">{{apt.status}}</option>
+                            <option value="Arrived"> Arrived </option>
+                            <option value="Checked In"> Checked In </option>
+                            <option value="In Room"> In Room </option>
+                            <option value="Cancelled"> Cancelled </option>
+                            <option value="Complete"> Complete </option>
+                            <option value="Confirmed"> Confirmed </option>
+                            <option value="In Session"> In Session </option>
+                            <option value="No Show"> No Show </option>
+                            <option value="Not Confirmed"> Not Confirmed</option>
+                            <option value="Rescheduled"> Rescheduled </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label class="col-sm-2 control-label">Start Time:</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control pull-right form_datetime" name="start_time"
+                               readonly value="{{apt.scheduled_time|date:'Y-m-d H:i'}}"/>
+                    </div>
+                    <label class="col-sm-2 control-label">End Time:</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control pull-right form_datetime" name="end_time"
+                               readonly value="{{apt.end_time|date:'Y-m-d H:i'}}"/>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label class="col-sm-2 control-label">Duration:</label>
+                    <div class="col-sm-3">
+                        <textarea class="form-control" name="duration" rows="1" readonly>{{apt.duration}}min</textarea> 
+                    </div>
+
+                    <label class="col-sm-2 control-label">Reason:</label>
+                    <div class="col-sm-3">
+                        <textarea class="form-control" name="reason" rows="2">{{apt.reason}}</textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="box-footer ">
+                <div class="row span7 text-center ">
+                    <button type="button" id="btnSave" class="btn btn-info margin-right ">save</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

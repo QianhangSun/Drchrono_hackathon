@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to drchrono</title>
+    <link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap.min.css'>
+    <link rel="stylesheet" href='../static/css/mybutton.css'>
+</head>
+<body>
+    <div style="width:100%;display: block;margin:0 auto;margin-top:200px;">
+        <div class="block" style="margin:0px auto;width:360px;">
+            <p style="text-align:left;font-size:18px; width:360px;">Please input your appointment id:</p>
+        </div>
+        
+        <form action="check_in" method="GET"> {% csrf_token %}
+            <div class="block" style="margin:0px auto; margin-top:40px; width:360px;">
+                <label style="float:left;width:120px;display:inline-block;">Appointment ID:</label>
+                <input style="margin-left:20px;width:220px;" name="apt_id" value="">
+            </div>
+            <div class="block" style="margin:0px auto; margin-top:40px; width:360px;">
+                <input type="submit" class="btn-goback" style="margin-left:0px;" name="goback" value="Go Back">
+                <input type="submit" class="btn-next" style="margin-left:196px;" name="next" value="Next">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

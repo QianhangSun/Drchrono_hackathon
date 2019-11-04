@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to drchrono</title>
+       <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/search_doctor.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="hosp-container">
+		{% for doc in doctors %}
+		<div class="hc-text">
+			<p class="hs-name">{{doc.first_name}}</p>
+			<p class="hs-info">Email:</p>
+			<p class="hc-info-detail">{{doc.email}}</p>
+			<p class="hs-goodat">Specialty:</p>
+			<p class="hc-goodat-detail">{{doc.specialty}}</p>
+		</div>
+		<p><a href="/doctor_calendar" class="btn btn-primary btn-lg hc-btn" role="button">Make Appointment</a></p>
+		{% endfor %}
+	</div>
+</body>

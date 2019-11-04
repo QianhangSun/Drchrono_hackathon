@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to drchrono</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap.min.css'>
+    <link rel="stylesheet" href='../static/css/mybutton.css'>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div style="width:100%;display: block;margin:0 auto;margin-top:100px;">
+        <div class="block" style="margin:0px auto; width:800px;">
+            <p style="text-align:center;font-size:16px; width:800px;">Please input your information and click "Next", new user click "Register"</p>
+        </div>
+
+        <form action="newappointment" method="GET"> {% csrf_token %}
+            <div class="block" style="margin:0px auto; margin-top:20px; width:400px;">
+                <label style="float:left;width:120px;display:inline-block;">Patient ID:</label>
+                <input style="margin-left:20px;width:260px;" type="text" name="patient_id" value="{{patient.patient_id}}">
+            </div>
+            <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+                <label style="float:left;width:120px;display:inline-block;">First Name:</label>
+                <input style="margin-left:20px;width:260px;" type="text" name="firstname" value="{{patient.first_name}}">
+            </div>
+            <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+                <label style="float:left;width:120px;display:inline-block;">Last Name:</label>
+                <input style="margin-left:20px;width:260px;" type="text" name="lastname" value="{{patient.last_name}}">
+            </div>
+
+            <div class="block" style="margin:0px auto; margin-top:40px; width:400px;">
+                <input type="submit" class="btn-goback" name="goback" value="Go Back">
+                <input type="submit" class="btn-update" style="margin-left:76px;" name="next" value="Next">
+                <input type="submit" class="btn-next" style="margin-left:76px;" name="register" value="Register" >
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to drchrono</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href='../static/plugins/bootstrap/css/bootstrap.min.css'>
+    <link rel="stylesheet" href='../static/css/mybutton.css'>
+</head>
+<body>
+    <div style="width:100%;display: block;margin:0 auto;margin-top:100px;">
+        <div class="block" style="margin:0px auto; width:500px;">
+            <p style="text-align:center;font-size:16px; width:500px;">Please update your information, then click "submit" to save</p>
+        </div>
+
+    <form action="update_information" method="GET"> {% csrf_token %}
+        <input type="text" name="patient_id" style="display:none;" value={{patient.patient_id}}>
+        <input type="text" name="apt_id" style="display:none;" value={{apt.apt_id}}>
+        <input type="text" name="flag"  style="display:none;" value={{flag}}>
+
+        <div class="block" style="margin:0px auto; margin-top:20px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">First Name:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="firstname" required="required" value="{{patient.first_name}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Last Name:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="lastname" required="required" value="{{patient.last_name}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Date of Birth:</label>
+            <input style="margin-left:20px;width:260px;" type="date" name="date_of_birth" 
+                    required="required" value="{{patient.date_of_birth|date:'Y-m-d'}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Gender:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="gender" required="required" value="{{patient.gender}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Address:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="address" required="required" value="{{patient.address}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">City:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="city" required="required" value="{{patient.city}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">State:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="state" required="required" value="{{patient.state}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">SSN:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="ssn" required="required" value="{{patient.ssn}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Cell Phone:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="cell_phone" required="required" value="{{patient.cell_phone}}">
+        </div>
+        <div class="block" style="margin:0px auto; margin-top:5px; width:400px;">
+            <label style="float:left;width:120px;display:inline-block;">Email:</label>
+            <input style="margin-left:20px;width:260px;" type="text" name="email" required="required" value="{{patient.email}}">
+        </div>
+
+        <div class="block" style="margin:0px auto; margin-top:40px; width:400px;">
+            <input type="submit" class="btn-goback" name="goback" value="Go Back">
+            <input type="submit" class="btn-update" style="margin-left:236px;" name="submit" value="Submit">
+        </div>
+
+    </form>
+    </div>
+</body>
+</html>
